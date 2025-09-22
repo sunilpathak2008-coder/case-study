@@ -1,7 +1,7 @@
 <!-- src/app/app.component.html -->
 <div class="app-container" [dir]="dir">
   <header class="main-header">
-    <span class="main-title">Social Support Application with AI Assistance</span>
+    <span class="main-title">{{ 'APP_TITLE' | translate }} </span>
     <span class="lang-switcher">
       <button mat-button (click)="use('en')">English</button>
       <button mat-button (click)="use('ar')">العربية</button>

@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule } from '@ngx-translate/core'; // Add this import
 
 
@@ -45,6 +46,7 @@ import { TranslateModule } from '@ngx-translate/core'; // Add this import
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSnackBarModule,
     TranslateModule
   ],
   exports: [

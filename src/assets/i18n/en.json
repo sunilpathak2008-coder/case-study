@@ -85,5 +85,6 @@
     "FINANCIALSITUATION": "Please provide a suggestion for describing current financial situation in a social support application",
     "EMPLOYMENTCIRCUMSTANCES": "Please provide a suggestion for describing employment circumstances in a social support application",
     "REASON": "Please provide a suggestion for describing the reason for applying for social support"
-  }
+  },
+  "FORM_SUBMITTED_SUCCESS": "Form submitted successfully!"
 }

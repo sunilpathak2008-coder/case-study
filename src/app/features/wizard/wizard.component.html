@@ -8,9 +8,9 @@
   <p class="step-indicator">{{ 'WIZARD.PROGRESS' | translate : { step: currentStep, total: totalSteps } }}</p>
 
   <!-- Step Headings -->
-  <h1 *ngIf="currentStep === 1" class="step-heading">Step 1: Personal Information</h1>
-  <h1 *ngIf="currentStep === 2" class="step-heading">Step 2: Family & Financial Information</h1>
-  <h1 *ngIf="currentStep === 3" class="step-heading">Step 3: Situation Descriptions</h1>
+  <h1 *ngIf="currentStep === 1" class="step-heading">{{'WIZARD.STEP1' | translate}}</h1>
+  <h1 *ngIf="currentStep === 2" class="step-heading">{{'WIZARD.STEP2' | translate}}</h1>
+  <h1 *ngIf="currentStep === 3" class="step-heading">{{'WIZARD.STEP3' | translate}}</h1>
 
   <!-- ================= Step 1: Personal Info ================= -->
   <app-personal-info
@@ -41,7 +41,7 @@
   ></app-situation-descriptions>
 
   <!-- ================= Navigation Buttons ================= -->
-  <div class="wizard-actions" style="width: 100%; display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px;">
+  <div class="wizard-actions">
     <button mat-button type="button" (click)="prevStep()" [disabled]="currentStep === 1">
       {{ 'BACK' | translate }}
     </button>
@@ -64,4 +64,6 @@
       {{ 'SUBMIT' | translate }}
     </button>
   </div>
+
+
 </div>

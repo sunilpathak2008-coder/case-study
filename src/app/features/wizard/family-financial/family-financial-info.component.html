@@ -21,8 +21,8 @@
     </mat-form-field>
   </div>
   <div class="form-row">
-    <div class="form-field-select full-width">
-      <label class="form-label">{{ 'FIELDS.EMPLOYMENT_STATUS' | translate }}</label>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'FIELDS.EMPLOYMENT_STATUS' | translate }}</mat-label>
       <mat-select formControlName="employmentStatus">
         <mat-option *ngFor="let status of employmentOptions" [value]="status">
           {{ getEmploymentTranslationKey(status) | translate }}
@@ -31,7 +31,7 @@
       <mat-error *ngIf="form2.get('employmentStatus')?.invalid && form2.get('employmentStatus')?.touched">
         {{ 'ERRORS.EMPLOYMENT_STATUS_REQUIRED' | translate }}
       </mat-error>
-    </div>
+    </mat-form-field>
   </div>
   <div class="form-row">
     <mat-form-field appearance="fill">

@@ -5,6 +5,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { SuggestionDialogComponent } from './suggestion-dialog/suggestion-dialog.component';
 import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { DD_MM_YYYY_FORMAT } from '../../utils/date-formats.config';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-wizard',
   templateUrl: './wizard.component.html',
@@ -20,6 +23,7 @@ export class WizardComponent implements OnInit {
   currentStep = 1;
   totalSteps = 3;
   selectedCountryCode = '';
+  formSubmitted = false;
 
   // country list with codes
   countries = [
@@ -47,7 +51,13 @@ export class WizardComponent implements OnInit {
     return 'EMPLOYMENT.' + employment.toUpperCase().replace('-', '_');
   }
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private dialog: MatDialog) {
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar,
+    private translate: TranslateService
+  ) {
     this.initForms();
   }
 
@@ -159,13 +169,18 @@ export class WizardComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log('Submitted successfully:', res);
-          alert('✅ Form submitted successfully!');
+          this.formSubmitted = true;
+          this.translate.get('FORM_SUBMITTED_SUCCESS').subscribe((msg: string) => {
+            this.snackBar.open(msg, '', {
+              duration: 3000,
+              panelClass: ['snackbar-success']
+            });
+          });
           // Reset everything
-          this.resetWizard();
+          //this.resetWizard();
         },
         error: (err) => {
           console.error('Submit error:', err);
-          alert('❌ Failed to submit. Check console.');
         }
       });
   }
@@ -194,4 +209,5 @@ export class WizardComponent implements OnInit {
       }
     });
   }
+
 }
