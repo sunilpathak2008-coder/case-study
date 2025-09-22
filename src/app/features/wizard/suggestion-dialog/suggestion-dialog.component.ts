@@ -12,6 +12,8 @@ export class SuggestionDialogComponent implements OnInit {
   suggestion = '';
   loading = false;
   error = '';
+  title = '';
+  isEditing = false;
 
   constructor(
     private dialogRef: MatDialogRef<SuggestionDialogComponent>,
@@ -21,7 +23,28 @@ export class SuggestionDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.setTitle();
     this.generateSuggestion();
+  }
+
+  setTitle(): void {
+    let titleKey = '';
+    switch (this.data.field) {
+      case 'financialSituation':
+        titleKey = 'FIELDS.FINANCIAL_SITUATION';
+        break;
+      case 'employmentCircumstances':
+        titleKey = 'FIELDS.EMPLOYMENT_CIRCUMSTANCES';
+        break;
+      case 'reason':
+        titleKey = 'FIELDS.REASON';
+        break;
+      default:
+        titleKey = 'SUGGESTION_TITLE';
+    }
+    this.translate.get(titleKey).subscribe((msg: string) => {
+      this.title = msg;
+    });
   }
 
   generateSuggestion(): void {
@@ -48,17 +71,13 @@ export class SuggestionDialogComponent implements OnInit {
     });
   }
 
-  accept(): void {
-    this.dialogRef.close(this.suggestion);
+  edit(): void {
+    this.isEditing = true;
   }
 
-  edit(): void {
-    this.translate.get('ACTIONS.EDIT_PROMPT').subscribe((editPrompt: string) => {
-      const userEdit = prompt(editPrompt || '✏️ Edit the suggestion:', this.suggestion);
-      if (userEdit !== null) {
-        this.dialogRef.close(userEdit);
-      }
-    });
+  accept(): void {
+    this.isEditing = false;
+    this.dialogRef.close(this.suggestion);
   }
 
   discard(): void {
