@@ -1,5 +1,6 @@
 # Node
 node_modules/
+server/node_modules/
 
 # Build output
 dist/
@@ -34,6 +35,7 @@ Thumbs.db
 *.tgz
 package-lock.json
 yarn.lock
+server/package-lock.json
 
 # Test output
 /karma-*.log
