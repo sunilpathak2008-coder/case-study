@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { SituationDescriptionsComponent } from './situation-descriptions.component';
 
@@ -15,9 +15,9 @@ describe('SituationDescriptionsComponent', () => {
     fixture = TestBed.createComponent(SituationDescriptionsComponent);
     component = fixture.componentInstance;
     component.form3 = new FormGroup({
-      financialSituation: new FormControl(''),
-      employmentCircumstances: new FormControl(''),
-      reason: new FormControl('')
+      financialSituation: new FormControl('', Validators.required),
+      employmentCircumstances: new FormControl('', Validators.required),
+      reason: new FormControl('', Validators.required)
     });
     fixture.detectChanges();
   });
@@ -28,32 +28,16 @@ describe('SituationDescriptionsComponent', () => {
 
   it('should initialize form with default values', () => {
     expect(component.form3).toBeDefined();
-    // Adjusted expectation: form is valid if no validators are set
-    expect(component.form3.valid).toBeTrue();
+    expect(component.form3.valid).toBeFalse();
   });
 
   it('should validate required fields', () => {
-    component.form3.patchValue({
-      financialSituation: '',
-      employmentCircumstances: '',
-      reason: ''
-    });
-    fixture.detectChanges();
-    // Adjusted expectation: form is valid if no validators are set
-    expect(component.form3.valid).toBeTrue();
     component.form3.patchValue({
       financialSituation: 'Good',
       employmentCircumstances: 'Stable',
       reason: 'Need support'
     });
     fixture.detectChanges();
-    expect(component.form3.valid).toBeTrue();
-  });
-
-  it('should handle edge case for empty reason', () => {
-    component.form3.patchValue({ financialSituation: 'Good', employmentCircumstances: 'Stable', reason: '' });
-    fixture.detectChanges();
-    // Adjusted expectation: form is valid if no validators are set
     expect(component.form3.valid).toBeTrue();
   });
 

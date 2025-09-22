@@ -178,7 +178,7 @@ export class WizardComponent implements OnInit {
             });
           });
           // Reset everything
-          //this.resetWizard();
+          this.resetWizard();
         },
         error: (err) => {
           console.error('Submit error:', err);
