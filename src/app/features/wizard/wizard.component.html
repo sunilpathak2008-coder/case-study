@@ -41,11 +41,10 @@
   ></app-situation-descriptions>
 
   <!-- ================= Navigation Buttons ================= -->
-  <div class="nav-buttons">
+  <div class="wizard-actions" style="width: 100%; display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px;">
     <button mat-button type="button" (click)="prevStep()" [disabled]="currentStep === 1">
       {{ 'BACK' | translate }}
     </button>
-    
     <button 
       mat-raised-button 
       color="primary" 
@@ -55,7 +54,6 @@
       [disabled]="!isStepValid()">
       {{ 'NEXT' | translate }}
     </button>
-    
     <button 
       mat-raised-button 
       color="accent" 
