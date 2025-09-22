@@ -1,0 +1,89 @@
+{
+  "APP_TITLE": "Social Support Application with AI Assistance",
+  "WIZARD": {
+    "STEP1": "Step 1: Personal Information",
+    "STEP2": "Step 2: Family & Financial Info",
+    "STEP3": "Step 3: Situation Descriptions",
+    "PROGRESS": "Step {{step}} of {{total}}"
+  },
+  "FIELDS": {
+    "NAME": "Name",
+    "NATIONAL_ID": "National ID",
+    "DOB": "Date of Birth",
+    "GENDER": "Gender",
+    "ADDRESS": "Address",
+    "CITY": "City",
+    "STATE": "State",
+    "COUNTRY": "Country",
+    "PHONE": "Phone",
+    "EMAIL": "Email",
+    "MARITAL_STATUS": "Marital Status",
+    "DEPENDENTS": "Dependents",
+    "EMPLOYMENT_STATUS": "Employment Status",
+    "MONTHLY_INCOME": "Monthly Income",
+    "HOUSING_STATUS": "Housing Status",
+    "FINANCIAL_SITUATION": "Current Financial Situation",
+    "EMPLOYMENT_CIRCUMSTANCES": "Employment Circumstances",
+    "REASON": "Reason for Applying"
+  },
+  "GENDER": {
+    "MALE": "Male",
+    "FEMALE": "Female",
+    "TRANSGENDER": "Transgender"
+  },
+  "MARITAL_STATUS": {
+    "SINGLE": "Single",
+    "MARRIED": "Married"
+  },
+  "EMPLOYMENT": {
+    "UNEMPLOYED": "Unemployed",
+    "EMPLOYED": "Employed",
+    "SELF_EMPLOYED": "Self-Employed",
+    "STUDENT": "Student",
+    "RETIRED": "Retired"
+  },
+  "COUNTRIES": {
+    "INDIA": "India",
+    "UNITED_STATES": "United States",
+    "UNITED_KINGDOM": "United Kingdom",
+    "UAE": "UAE"
+  },
+  "ERRORS": {
+    "NAME_REQUIRED": "Name is required",
+    "NATIONAL_ID_REQUIRED": "National ID is required",
+    "DOB_REQUIRED": "Date of Birth is required",
+    "GENDER_REQUIRED": "Gender is required",
+    "COUNTRY_REQUIRED": "Country is required",
+    "PHONE_REQUIRED": "Phone is required",
+    "EMAIL_REQUIRED": "Valid email is required",
+    "MARITAL_STATUS_REQUIRED": "Marital status is required",
+    "DEPENDENTS_MIN": "Dependents cannot be less than 0",
+    "EMPLOYMENT_STATUS_REQUIRED": "Employment status is required",
+    "MONTHLY_INCOME_MIN": "Monthly income cannot be less than 0",
+    "HOUSING_STATUS_REQUIRED": "Housing status is required"
+  },
+  "ACTIONS": {
+    "ACCEPT": "Accept",
+    "EDIT": "Edit",
+    "DISCARD": "Discard",
+    "EDIT_PROMPT": "✏️ Edit the suggestion:"
+  },
+  "FORMS": {
+    "PERSONAL_INFO_FORM": "Personal Information",
+    "FAMILY_FINANCIAL_INFO_FORM": "Family and Financial Information",
+    "SITUATION_DESCRIPTIONS_FORM": "Situation Descriptions"
+  },
+  "PHONE_PLACEHOLDER": "XXX XXX XXXX",
+  "HELP_ME_WRITE": "Help me write",
+  "NEXT": "Next",
+  "BACK": "Back",
+  "SUBMIT": "Submit",
+  "SUGGESTION_TITLE": "Suggested text",
+  "GENERATING": "Generating suggestion...",
+  "AI_ERROR": "Unable to generate suggestion. Try again later.",
+  "SUGGESTION_PROMPTS": {
+    "FINANCIALSITUATION": "Please provide a suggestion for describing current financial situation in a social support application",
+    "EMPLOYMENTCIRCUMSTANCES": "Please provide a suggestion for describing employment circumstances in a social support application",
+    "REASON": "Please provide a suggestion for describing the reason for applying for social support"
+  }
+}

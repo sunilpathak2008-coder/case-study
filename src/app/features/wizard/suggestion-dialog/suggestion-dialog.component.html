@@ -1,0 +1,52 @@
+<div class="dialog-container">
+  <h2 mat-dialog-title>{{ 'SUGGESTION_TITLE' | translate }}</h2>
+  
+  <mat-dialog-content class="dialog-content">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading-container">
+      <mat-spinner diameter="30"></mat-spinner>
+      <p>{{ 'GENERATING' | translate }}</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error" class="error-container">
+      <mat-icon color="warn">error</mat-icon>
+      <p>{{ error | translate }}</p>
+    </div>
+
+    <!-- Success State -->
+    <div *ngIf="suggestion && !loading && !error" class="suggestion-container">
+      <textarea 
+        [(ngModel)]="suggestion" 
+        class="suggestion-text"
+        readonly
+        rows="6">
+      </textarea>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end" class="dialog-actions">
+    <button 
+      mat-button 
+      (click)="discard()" 
+      [disabled]="loading">
+      {{ 'ACTIONS.DISCARD' | translate }}
+    </button>
+    
+    <button 
+      mat-button 
+      color="primary" 
+      (click)="edit()" 
+      [disabled]="loading || !suggestion">
+      {{ 'ACTIONS.EDIT' | translate }}
+    </button>
+    
+    <button 
+      mat-raised-button 
+      color="primary" 
+      (click)="accept()" 
+      [disabled]="loading || !suggestion">
+      {{ 'ACTIONS.ACCEPT' | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

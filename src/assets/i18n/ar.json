@@ -1,0 +1,89 @@
+{
+  "APP_TITLE": "تطبيق الدعم الاجتماعي مع المساعدة الذكية",
+  "WIZARD": {
+    "STEP1": "الخطوة 1: المعلومات الشخصية",
+    "STEP2": "الخطوة 2: الأسرة والمعلومات المالية",
+    "STEP3": "الخطوة 3: وصف الحالة",
+    "PROGRESS": "الخطوة {{step}} من {{total}}"
+  },
+  "FIELDS": {
+    "NAME": "الاسم",
+    "NATIONAL_ID": "الهوية الوطنية",
+    "DOB": "تاريخ الميلاد",
+    "GENDER": "الجنس",
+    "ADDRESS": "العنوان",
+    "CITY": "المدينة",
+    "STATE": "المحافظة",
+    "COUNTRY": "البلد",
+    "PHONE": "الهاتف",
+    "EMAIL": "البريد الإلكتروني",
+    "MARITAL_STATUS": "الحالة الاجتماعية",
+    "DEPENDENTS": "المعالون",
+    "EMPLOYMENT_STATUS": "حالة العمل",
+    "MONTHLY_INCOME": "الدخل الشهري",
+    "HOUSING_STATUS": "حالة السكن",
+    "FINANCIAL_SITUATION": "الوضع المالي الحالي",
+    "EMPLOYMENT_CIRCUMSTANCES": "ظروف العمل",
+    "REASON": "سبب التقديم"
+  },
+  "GENDER": {
+    "MALE": "ذكر",
+    "FEMALE": "أنثى",
+    "TRANSGENDER": "متحول جنسياً"
+  },
+  "MARITAL_STATUS": {
+    "SINGLE": "أعزب",
+    "MARRIED": "متزوج"
+  },
+  "EMPLOYMENT": {
+    "UNEMPLOYED": "عاطل عن العمل",
+    "EMPLOYED": "موظف",
+    "SELF_EMPLOYED": "يعمل لحسابه الخاص",
+    "STUDENT": "طالب",
+    "RETIRED": "متقاعد"
+  },
+  "COUNTRIES": {
+    "INDIA": "الهند",
+    "UNITED_STATES": "الولايات المتحدة",
+    "UNITED_KINGDOM": "المملكة المتحدة",
+    "UAE": "دولة الإمارات العربية المتحدة"
+  },
+  "ERRORS": {
+    "NAME_REQUIRED": "الاسم مطلوب",
+    "NATIONAL_ID_REQUIRED": "الهوية الوطنية مطلوبة",
+    "DOB_REQUIRED": "تاريخ الميلاد مطلوب",
+    "GENDER_REQUIRED": "الجنس مطلوب",
+    "COUNTRY_REQUIRED": "البلد مطلوب",
+    "PHONE_REQUIRED": "الهاتف مطلوب",
+    "EMAIL_REQUIRED": "بريد إلكتروني صحيح مطلوب",
+    "MARITAL_STATUS_REQUIRED": "الحالة الاجتماعية مطلوبة",
+    "DEPENDENTS_MIN": "لا يمكن أن يكون المعالون أقل من 0",
+    "EMPLOYMENT_STATUS_REQUIRED": "حالة العمل مطلوبة",
+    "MONTHLY_INCOME_MIN": "لا يمكن أن يكون الدخل الشهري أقل من 0",
+    "HOUSING_STATUS_REQUIRED": "حالة السكن مطلوبة"
+  },
+  "ACTIONS": {
+    "ACCEPT": "قبول",
+    "EDIT": "تعديل",
+    "DISCARD": "تجاهل",
+    "EDIT_PROMPT": "✏️ تعديل الاقتراح:"
+  },
+  "FORMS": {
+    "PERSONAL_INFO_FORM": "المعلومات الشخصية",
+    "FAMILY_FINANCIAL_INFO_FORM": "معلومات الأسرة والمالية",
+    "SITUATION_DESCRIPTIONS_FORM": "وصف الحالة"
+  },
+  "PHONE_PLACEHOLDER": "XXX XXX XXXX",
+  "HELP_ME_WRITE": "ساعدني في الكتابة",
+  "NEXT": "التالي",
+  "BACK": "رجوع",
+  "SUBMIT": "إرسال",
+  "SUGGESTION_TITLE": "النص المقترح",
+  "GENERATING": "جارٍ توليد الاقتراح...",
+  "AI_ERROR": "تعذر إنشاء اقتراح. حاول لاحقًا.",
+  "SUGGESTION_PROMPTS": {
+    "FINANCIALSITUATION": "يرجى تقديم اقتراح لوصف الوضع المالي الحالي في طلب الدعم الاجتماعي",
+    "EMPLOYMENTCIRCUMSTANCES": "يرجى تقديم اقتراح لوصف ظروف العمل في طلب الدعم الاجتماعي",
+    "REASON": "يرجى تقديم اقتراح لوصف سبب التقديم للحصول على الدعم الاجتماعي"
+  }
+}

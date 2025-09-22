@@ -1,0 +1,7 @@
+/* src/styles.scss */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+html, body { height: 100%; margin: 0; font-family: Roboto, Arial, sans-serif; }
+.app-container { max-width: 980px; margin: 24px auto; padding: 16px; }
+.full { width:100%; }
+.help-row { margin-top: 8px; }
+html[dir='rtl'] .progress { flex-direction: row-reverse; }
