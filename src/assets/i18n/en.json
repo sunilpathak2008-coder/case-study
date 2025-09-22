@@ -60,7 +60,11 @@
     "DEPENDENTS_MIN": "Dependents cannot be less than 0",
     "EMPLOYMENT_STATUS_REQUIRED": "Employment status is required",
     "MONTHLY_INCOME_MIN": "Monthly income cannot be less than 0",
-    "HOUSING_STATUS_REQUIRED": "Housing status is required"
+    "HOUSING_STATUS_REQUIRED": "Housing status is required",
+    "PHONE_INDIA": "Phone number must be 10 digits and start with 6-9 (India).",
+    "PHONE_US": "Phone number must be 10 digits and start with 2-9 (US).",
+    "PHONE_UAE": "Phone number must be 9 digits and start with 5 (UAE).",
+    "PHONE_INVALID": "Phone number format is invalid."
   },
   "ACTIONS": {
     "ACCEPT": "Accept",

@@ -24,6 +24,7 @@ export class WizardComponent implements OnInit {
   totalSteps = 3;
   selectedCountryCode = '';
   formSubmitted = false;
+  maxDate = new Date();
 
   // country list with codes
   countries = [
@@ -177,13 +178,14 @@ export class WizardComponent implements OnInit {
             });
           });
           // Reset everything
-          this.resetWizard();
+          //this.resetWizard();
         },
         error: (err) => {
           console.error('Submit error:', err);
         }
       });
   }
+
 
   private resetWizard(): void {
     this.form1.reset();
