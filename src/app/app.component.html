@@ -1,8 +1,13 @@
 <!-- src/app/app.component.html -->
 <div class="app-container" [dir]="dir">
-  <header>
-    <button mat-button (click)="use('en')">English</button>
-    <button mat-button (click)="use('ar')">العربية</button>
+  <header class="main-header">
+    <span class="main-title">Social Support Application with AI Assistance</span>
+    <span class="lang-switcher">
+      <button mat-button (click)="use('en')">English</button>
+      <button mat-button (click)="use('ar')">العربية</button>
+    </span>
   </header>
-  <app-wizard></app-wizard>
+  <main class="wizard-scroll-area">
+    <app-wizard></app-wizard>
+  </main>
 </div>

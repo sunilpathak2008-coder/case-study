@@ -1,0 +1,29 @@
+<form [formGroup]="form3" [attr.aria-label]="'SITUATION_DESCRIPTIONS_FORM' | translate">
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'FIELDS.FINANCIAL_SITUATION' | translate }}</mat-label>
+      <textarea matInput formControlName="financialSituation"></textarea>
+    </mat-form-field>
+    <button mat-stroked-button color="primary" type="button" (click)="openHelp('financialSituation')">
+      {{ 'HELP_ME_WRITE' | translate }}
+    </button>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'FIELDS.EMPLOYMENT_CIRCUMSTANCES' | translate }}</mat-label>
+      <textarea matInput formControlName="employmentCircumstances"></textarea>
+    </mat-form-field>
+    <button mat-stroked-button color="primary" type="button" (click)="openHelp('employmentCircumstances')">
+      {{ 'HELP_ME_WRITE' | translate }}
+    </button>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'FIELDS.REASON' | translate }}</mat-label>
+      <textarea matInput formControlName="reason"></textarea>
+    </mat-form-field>
+    <button mat-stroked-button color="primary" type="button" (click)="openHelp('reason')">
+      {{ 'HELP_ME_WRITE' | translate }}
+    </button>
+  </div>
+</form>

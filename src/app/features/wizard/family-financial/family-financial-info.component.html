@@ -1,0 +1,52 @@
+<form [formGroup]="form2" [attr.aria-label]="'FAMILY_FINANCIAL_INFO_FORM' | translate">
+  <div class="form-row">
+    <div class="form-field-full">
+      <label class="form-label form-label-title">{{ 'FIELDS.MARITAL_STATUS' | translate }}</label>
+      <mat-radio-group formControlName="maritalStatus" class="radio-group-row">
+        <mat-radio-button value="Single">{{ 'MARITAL_STATUS.SINGLE' | translate }}</mat-radio-button>
+        <mat-radio-button value="Married">{{ 'MARITAL_STATUS.MARRIED' | translate }}</mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="form2.get('maritalStatus')?.invalid && form2.get('maritalStatus')?.touched">
+        {{ 'ERRORS.MARITAL_STATUS_REQUIRED' | translate }}
+      </mat-error>
+    </div>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.DEPENDENTS' | translate }}</mat-label>
+      <input matInput type="number" formControlName="dependents" />
+      <mat-error *ngIf="form2.get('dependents')?.hasError('min')">
+        {{ 'ERRORS.DEPENDENTS_MIN' | translate }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <div class="form-field-select full-width">
+      <label class="form-label">{{ 'FIELDS.EMPLOYMENT_STATUS' | translate }}</label>
+      <mat-select formControlName="employmentStatus">
+        <mat-option *ngFor="let status of employmentOptions" [value]="status">
+          {{ getEmploymentTranslationKey(status) | translate }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form2.get('employmentStatus')?.invalid && form2.get('employmentStatus')?.touched">
+        {{ 'ERRORS.EMPLOYMENT_STATUS_REQUIRED' | translate }}
+      </mat-error>
+    </div>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.MONTHLY_INCOME' | translate }}</mat-label>
+      <input matInput type="number" formControlName="monthlyIncome" />
+      <mat-error *ngIf="form2.get('monthlyIncome')?.hasError('min')">
+        {{ 'ERRORS.MONTHLY_INCOME_MIN' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.HOUSING_STATUS' | translate }}</mat-label>
+      <input matInput formControlName="housingStatus" />
+      <mat-error *ngIf="form2.get('housingStatus')?.invalid && form2.get('housingStatus')?.touched">
+        {{ 'ERRORS.HOUSING_STATUS_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+</form>

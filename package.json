@@ -7,6 +7,9 @@
     "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
+    "test:coverage": "ng test --code-coverage",
+    "test:file": "ng test:file src/app/features/wizard/family-financial/family-financial-info.component.spec.ts",
+    "test:file-coverage": "ng test --code-coverage --watch=false --browsers=ChromeHeadless --main src/app/features/wizard/family-financial/family-financial-info.component.spec.ts",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:proxy": "node server/index.js"

@@ -1,0 +1,28 @@
+/* Empty SCSS file for SituationDescriptionsComponent. Add styles as needed. */
+
+:host ::ng-deep form {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+mat-form-field.full-width {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  :host ::ng-deep form {
+    padding: 16px 4px;
+  }
+}

@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { WizardComponent } from './wizard.component';
 import { SuggestionDialogComponent } from './suggestion-dialog/suggestion-dialog.component';
+import { PersonalInfoComponent } from './personal/personal-info.component';
+import { FamilyFinancialInfoComponent } from './family-financial/family-financial-info.component';
+import { SituationDescriptionsComponent } from './situation-desc/situation-descriptions.component';
 
 // Angular Material
 import { MatInputModule } from '@angular/material/input';
@@ -22,7 +25,10 @@ import { TranslateModule } from '@ngx-translate/core'; // Add this import
 @NgModule({
   declarations: [
     WizardComponent,
-    SuggestionDialogComponent
+    SuggestionDialogComponent,
+    PersonalInfoComponent,
+    FamilyFinancialInfoComponent,
+    SituationDescriptionsComponent
   ],
   imports: [
     CommonModule,

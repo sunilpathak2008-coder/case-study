@@ -1,0 +1,83 @@
+<form [formGroup]="form1" [attr.aria-label]="'PERSONAL_INFO_FORM' | translate">
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.NAME' | translate }}</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="form1.get('name')?.invalid && form1.get('name')?.touched">
+        {{ 'ERRORS.NAME_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.NATIONAL_ID' | translate }}</mat-label>
+      <input matInput formControlName="nationalId" />
+      <mat-error *ngIf="form1.get('nationalId')?.invalid && form1.get('nationalId')?.touched">
+        {{ 'ERRORS.NATIONAL_ID_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.DOB' | translate }}</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dob" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="form1.get('dob')?.invalid && form1.get('dob')?.touched">
+        {{ 'ERRORS.DOB_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <div class="form-field-full">
+      <label class="form-label">{{ 'FIELDS.GENDER' | translate }}</label>
+      <mat-radio-group formControlName="gender" class="radio-group-row">
+        <mat-radio-button value="Male">{{ 'GENDER.MALE' | translate }}</mat-radio-button>
+        <mat-radio-button value="Female">{{ 'GENDER.FEMALE' | translate }}</mat-radio-button>
+        <mat-radio-button value="Transgender">{{ 'GENDER.TRANSGENDER' | translate }}</mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="form1.get('gender')?.invalid && form1.get('gender')?.touched">
+        {{ 'ERRORS.GENDER_REQUIRED' | translate }}
+      </mat-error>
+    </div>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.ADDRESS' | translate }}</mat-label>
+      <input matInput formControlName="address" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.CITY' | translate }}</mat-label>
+      <input matInput formControlName="city" />
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.STATE' | translate }}</mat-label>
+      <input matInput formControlName="state" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.COUNTRY' | translate }}</mat-label>
+      <mat-select formControlName="country" (selectionChange)="handleCountryChange($event.value)">
+        <mat-option *ngFor="let country of countries" [value]="country.code">
+          {{ getCountryTranslationKey(country.name) | translate }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form1.get('country')?.invalid && form1.get('country')?.touched">
+        {{ 'ERRORS.COUNTRY_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.PHONE' | translate }}</mat-label>
+      <input matInput formControlName="phone" [placeholder]="'+' + selectedCountryCode + ' ' + ('PHONE_PLACEHOLDER' | translate)" />
+      <mat-error *ngIf="form1.get('phone')?.invalid && form1.get('phone')?.touched">
+        {{ 'ERRORS.PHONE_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'FIELDS.EMAIL' | translate }}</mat-label>
+      <input matInput type="email" formControlName="email" />
+      <mat-error *ngIf="form1.get('email')?.invalid && form1.get('email')?.touched">
+        {{ 'ERRORS.EMAIL_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+</form>

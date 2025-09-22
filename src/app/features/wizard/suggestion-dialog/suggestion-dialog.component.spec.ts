@@ -4,6 +4,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { OpenAiService } from 'src/app/core/services/openai.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { of, throwError } from 'rxjs';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 describe('SuggestionDialogComponent', () => {
   let component: SuggestionDialogComponent;
@@ -17,7 +19,7 @@ describe('SuggestionDialogComponent', () => {
     openAiSpy = jasmine.createSpyObj('OpenAiService', ['getSuggestion']);
     await TestBed.configureTestingModule({
       declarations: [SuggestionDialogComponent],
-      imports: [TranslateModule.forRoot()],
+      imports: [TranslateModule.forRoot(), MatDialogModule, MatProgressSpinnerModule],
       providers: [
         { provide: MatDialogRef, useValue: dialogRefSpy },
         { provide: MAT_DIALOG_DATA, useValue: { field: 'reason' } },
